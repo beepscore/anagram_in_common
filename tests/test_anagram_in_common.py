@@ -45,3 +45,14 @@ class TestAnagramInCommon(unittest.TestCase):
         # result is a tuple of the form
         # (anagram from a, letters removed from a, letters removed from b)
         self.assertEqual(result, ('bacbac', 0, 0))
+
+    def test_anagram_in_common_hello_billion(self):
+        # example words from video
+        a = 'hello'
+        b = 'billion'
+
+        # call method under test
+        result = anagram_in_common.anagram_in_common(a, b)
+        # result is a tuple of the form
+        # (anagram from a, letters removed from a, letters removed from b)
+        self.assertEqual(result, ('llo', 2, 4))
