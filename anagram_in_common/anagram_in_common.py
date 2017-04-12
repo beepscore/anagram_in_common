@@ -13,22 +13,16 @@ def anagram_in_common(a: str, b: str):
 
     letters_in_anagram = []
 
-    a_letters_remaining = list(a)
     b_letters_remaining = list(b)
 
-    # iterate over a and b instead of over lists
-    # avoid potential problem of changing list length while iterating over it
+    # iterate over a. Note a may have duplicate letters.
+    # avoid potential problem of iterating over a list while changing it
     for letter_a in a:
 
         if letter_a in b_letters_remaining:
             letters_in_anagram.append(letter_a)
-
-            # to handle possible duplicate letters within one word, remove the current letter from each word
-            a_letters_remaining.pop(a_letters_remaining.index(letter_a))
+            # to handle possible duplicate letters in a or b, remove the current letter from b_letters_remaining
             b_letters_remaining.pop(b_letters_remaining.index(letter_a))
-        else:
-            # letter_a not in b_letters
-            a_letters_remaining.pop(a_letters_remaining.index(letter_a))
 
     number_of_letters_removed_from_a = len(a) - len(letters_in_anagram)
     number_of_letters_removed_from_b = len(b) - len(letters_in_anagram)
