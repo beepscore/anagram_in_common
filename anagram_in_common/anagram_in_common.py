@@ -10,4 +10,30 @@ def anagram_in_common(a: str, b: str):
     :returns: a tuple of the form
     (anagram from a, letters removed from a, letters removed from b)
     """
-    return ('ac', 1, 2)
+    # a = 'aabb', b='bc'
+
+    letters_in_anagram = []
+    letters_in_a_not_in_b = []
+
+    a_letters_remaining = list(a)
+    b_letters_remaining = list(b)
+
+    # iterate over a and b instead of over lists
+    # avoid potential problem of changing list length while iterating over it
+    for letter_a in a:
+
+        if letter_a in b_letters_remaining:
+            letters_in_anagram.append(letter_a)
+
+            # to handle possible duplicate letters within one word, remove the current letter from each word
+            a_letters_remaining.pop(a_letters_remaining.index(letter_a))
+            b_letters_remaining.pop(b_letters_remaining.index(letter_a))
+        else:
+            # letter_a not in b_letters
+            letters_in_a_not_in_b.append(letter_a)
+            a_letters_remaining.pop(a_letters_remaining.index(letter_a))
+
+    number_of_letters_removed_from_a = len(a) - len(letters_in_anagram)
+    number_of_letters_removed_from_b = len(b) - len(letters_in_anagram)
+
+    return ''.join(letters_in_anagram), number_of_letters_removed_from_a, number_of_letters_removed_from_b
