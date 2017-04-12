@@ -12,7 +12,6 @@ def anagram_in_common(a: str, b: str):
     """
 
     letters_in_anagram = []
-    letters_in_a_not_in_b = []
 
     a_letters_remaining = list(a)
     b_letters_remaining = list(b)
@@ -29,7 +28,6 @@ def anagram_in_common(a: str, b: str):
             b_letters_remaining.pop(b_letters_remaining.index(letter_a))
         else:
             # letter_a not in b_letters
-            letters_in_a_not_in_b.append(letter_a)
             a_letters_remaining.pop(a_letters_remaining.index(letter_a))
 
     number_of_letters_removed_from_a = len(a) - len(letters_in_anagram)
