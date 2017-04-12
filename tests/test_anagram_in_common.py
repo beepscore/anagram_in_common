@@ -35,3 +35,13 @@ class TestAnagramInCommon(unittest.TestCase):
         # result is a tuple of the form
         # (anagram from a, letters removed from a, letters removed from b)
         self.assertEqual(result, ('bb', 3, 3))
+
+    def test_anagram_in_common_duplicate_letters_all_common(self):
+        a = 'bacbac'
+        b = 'abcabc'
+
+        # call method under test
+        result = anagram_in_common.anagram_in_common(a, b)
+        # result is a tuple of the form
+        # (anagram from a, letters removed from a, letters removed from b)
+        self.assertEqual(result, ('bacbac', 0, 0))
