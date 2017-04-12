@@ -12,8 +12,6 @@ class TestAnagramInCommon(unittest.TestCase):
 
         # call method under test
         result = anagram_in_common.anagram_in_common(a, b)
-        # result is a tuple of the form
-        # (anagram from a, letters removed from a, letters removed from b)
         self.assertEqual(result, ('ac', 1, 2))
 
     def test_anagram_in_common_duplicate_letters(self):
@@ -22,8 +20,6 @@ class TestAnagramInCommon(unittest.TestCase):
 
         # call method under test
         result = anagram_in_common.anagram_in_common(a, b)
-        # result is a tuple of the form
-        # (anagram from a, letters removed from a, letters removed from b)
         self.assertEqual(result, ('b', 3, 2))
 
     def test_anagram_in_common_duplicate_letters2(self):
@@ -32,8 +28,6 @@ class TestAnagramInCommon(unittest.TestCase):
 
         # call method under test
         result = anagram_in_common.anagram_in_common(a, b)
-        # result is a tuple of the form
-        # (anagram from a, letters removed from a, letters removed from b)
         self.assertEqual(result, ('bb', 3, 3))
 
     def test_anagram_in_common_duplicate_letters_all_common(self):
@@ -42,8 +36,6 @@ class TestAnagramInCommon(unittest.TestCase):
 
         # call method under test
         result = anagram_in_common.anagram_in_common(a, b)
-        # result is a tuple of the form
-        # (anagram from a, letters removed from a, letters removed from b)
         self.assertEqual(result, ('bacbac', 0, 0))
 
     def test_anagram_in_common_hello_billion(self):
@@ -53,6 +45,4 @@ class TestAnagramInCommon(unittest.TestCase):
 
         # call method under test
         result = anagram_in_common.anagram_in_common(a, b)
-        # result is a tuple of the form
-        # (anagram from a, letters removed from a, letters removed from b)
         self.assertEqual(result, ('llo', 2, 4))
