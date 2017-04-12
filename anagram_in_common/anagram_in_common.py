@@ -10,7 +10,6 @@ def anagram_in_common(a: str, b: str):
     :returns: a tuple of the form
     (anagram from a, letters removed from a, letters removed from b)
     """
-    # a = 'aabb', b='bc'
 
     letters_in_anagram = []
     letters_in_a_not_in_b = []
