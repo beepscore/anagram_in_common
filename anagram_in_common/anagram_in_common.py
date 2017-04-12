@@ -14,14 +14,19 @@ def anagram_in_common(a: str, b: str):
     letters_in_anagram = []
 
     b_letters_remaining = list(b)
+    """ b_letters_remaining helps handle possible duplicate letters in a. """
 
     # iterate over a. Note a may have duplicate letters.
     # avoid potential problem of iterating over a list while changing it
     for letter_a in a:
 
+        # Suppose a = 'gg' and b = 'g'
+        # When we get to the second letter of a, checking if it's in b is true.
+        # Instead, check if the letter is in b_letters_remaining.
         if letter_a in b_letters_remaining:
             letters_in_anagram.append(letter_a)
-            # to handle possible duplicate letters in a or b, remove the current letter from b_letters_remaining
+            # Every time we 'use' a letter in b to match one in a,
+            # remove the current letter from b_letters_remaining.
             b_letters_remaining.pop(b_letters_remaining.index(letter_a))
 
     number_of_letters_removed_from_a = len(a) - len(letters_in_anagram)
