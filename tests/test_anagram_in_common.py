@@ -62,3 +62,11 @@ class TestAnagramInCommon(unittest.TestCase):
         # call method under test
         result = anagram_in_common.anagram_in_common(a, b)
         self.assertEqual(result, ('', 8, 0))
+
+    def test_anagram_in_common_a_b_empty(self):
+        a = ""
+        b = ""
+
+        # call method under test
+        result = anagram_in_common.anagram_in_common(a, b)
+        self.assertEqual(result, ('', 0, 0))
